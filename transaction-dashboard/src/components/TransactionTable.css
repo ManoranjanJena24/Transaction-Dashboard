@@ -1,0 +1,29 @@
+
+.transaction-table {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 12px; /* Rounded corners with a radius of 12px */
+  overflow: hidden; /* Ensures border-radius applies correctly */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+ background-color: #ffdc8c;
+}
+
+.transaction-table th, tr,td{
+/* border-top-left-radius: 25px; */
+border-radius: 25px;
+border: 1px solid #040404;
+}
+/*  */
+
+.input-search{
+  margin-left: 20%;
+  background-color: #ffdc8c; 
+  border-radius: 25px;
+  border-color: #ffdc8c; 
+  text-align: center;
+  color: black;
+  padding: 10px;
+  margin-bottom: 1%;
+}

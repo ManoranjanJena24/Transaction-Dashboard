@@ -1,0 +1,24 @@
+.statistics-container {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .statistics-table {
+   
+    border-collapse: collapse;
+    background-color: #ffdc8c;
+    border-radius: 12px;
+    border: none;
+  }
+  
+  .statistics-table tr,
+  .statistics-table td {
+    border: none; 
+  }
+  .statistics-table td {
+    padding: 10px; 
+  }

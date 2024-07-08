@@ -11,7 +11,10 @@ const App = () => {
 
   return (
     <div className='App'>
-      <h1>Transaction Dashboard</h1>
+
+      <div className="dashboard-header">
+        <h1>Transaction Dashboard</h1>
+      </div>
       <TransactionTable month={month} />
       <div>
         <label>Select Month: </label>

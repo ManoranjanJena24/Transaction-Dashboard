@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import api from '../api';
+import './TransactionBarChart.css';
 
 const TransactionBarChart = ({ month }) => {
   const [barData, setBarData] = useState([]);
@@ -10,15 +11,19 @@ const TransactionBarChart = ({ month }) => {
   }, [month]);
 
   const fetchBarData = async () => {
-    const { data } = await api.get('/bar-chart', { params: { month } });
-    setBarData(data);
+    try {
+      const { data } = await api.get('/bar-chart', { params: { month } });
+      setBarData(data);
+    } catch (error) {
+      console.error('Error fetching bar chart data:', error);
+    }
   };
 
   const data = {
     labels: barData.map(item => item.range),
     datasets: [
       {
-        label: '# of Items',
+        label: 'Number of Items',
         data: barData.map(item => item.count),
         backgroundColor: 'rgba(75, 192, 192, 0.6)',
         borderColor: 'rgba(75, 192, 192, 1)',
@@ -27,10 +32,22 @@ const TransactionBarChart = ({ month }) => {
     ]
   };
 
+  const options = {
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          stepSize: 20, 
+          precision: 0 
+        }
+      }
+    }
+  };
+
   return (
-    <div>
-      <h3>Bar Chart for {month}</h3>
-      <Bar data={data} />
+    <div className='bar-chart-container'>
+      <h2>Bar Chart Stats - {month}</h2>
+      <Bar data={data} options={options} />
     </div>
   );
 };

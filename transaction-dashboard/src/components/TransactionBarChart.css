@@ -1,0 +1,21 @@
+.bar-chart-container {
+    margin-top: 20px; /* Adjust margin top as needed */
+    padding: 20px; /* Adjust padding as needed */
+    background-color: #edf6f6; /* Background color for the container */
+    border-radius: 12px; /* Rounded corners */
+    
+    
+    /* Center horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Centers the container horizontally */
+  }
+  
+  .bar-chart-container h3 {
+    margin-bottom: 10px; /* Optional: Adjust margin bottom for title */
+  }
+  
